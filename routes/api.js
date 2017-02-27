@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models')
-
+// var models = require('../models')
+var controllers = require('../controllers/controllers')
 
 /* GET home page. */
 // router.get('/users', function(req, res, next) {
@@ -9,60 +9,19 @@ var models = require('../models')
 // });
 
 // menampilkan seluruh data user
-router.get('/users', function(req, res, next) {
-  models.User.findAll().then(function(results) {
-    res.send(results)
-  })
-});
+router.get('/users', controllers.get_users);
 
 // menampilkan data user berdasarkan id
-router.get('/users/:id', function(req, res, next) {
-  models.User.findById(req.params.id).then(function(result) {
-    res.send(result)
-  })
-});
+router.get('/users/:id', controllers.get_user_id);
 
 // menambahkan data user
-router.post('/users', function(req, res, next) {
-    models.User.create({
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone
-    }).then(function(results) {
-      res.send(results)
-    })
-});
+router.post('/users', controllers.add_user);
 
 // menghapus data user berdasarkan id
-router.delete('/users/:id', function(req, res, next) {
-    models.User.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(results) {
-      // console.log(results);
-      res.send(`user id ${req.params.id} deleted`)
-    }).catch(function(err) {
-      console.log(err);
-    })
-});
+router.delete('/users/:id', controllers.delete_user_id);
 
 // update data user berdasarkan id
-router.put('/users/:id', function (req, res, next) {
-  models.User.update({
-    name: req.body.name,
-    email: req.body.email,
-    phone: req.body.phone
-  },
-  {
-  where: {
-    id: req.params.id
-  }
-}).then(function(result) {
-  res.send(`data has been updated`)
-})
-})
-
+router.put('/users/:id', controllers.update_user)
 
 
 module.exports = router;
