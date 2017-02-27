@@ -1,0 +1,28 @@
+{
+  "name": "api-basic",
+  "version": "1.0.0",
+  "description": "##**REST API** #### List of basic routes:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isumizumi/api-basic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isumizumi/api-basic/issues"
+  },
+  "homepage": "https://github.com/isumizumi/api-basic#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "nodemon": "^1.11.0",
+    "pg": "^6.1.2",
+    "sequelize": "^3.30.2",
+    "sequelize-cli": "^2.5.1"
+  }
+}
