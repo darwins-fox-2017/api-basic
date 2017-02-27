@@ -8,9 +8,18 @@ let db = require('../../models')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  db.User.findAll().then(function(users){
-    res.json(users);
-  })
+  let name = req.query.name
+  if(name){
+    db.User.findAll({
+      where: ["name like ?", '%' + name + '%']
+    }).then((users) => {
+      res.json(users);
+    })
+  } else {
+    db.User.findAll().then(function(users){
+      res.json(users);
+    })
+  }
 });
 
 // Get one user by ID
