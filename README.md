@@ -35,4 +35,4 @@ With only npm:
 	npm start
 	npm run dev
 
-Access te website via [http:localhost:3000](http:localhost:3000) http:localhost:3000 or API via http://localhost:3000/api
+Access te website via [http:localhost:3000](http:localhost:3000) or API via [http://localhost:3000/api](http://localhost:3000/api)
