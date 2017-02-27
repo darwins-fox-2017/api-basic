@@ -34,12 +34,9 @@ USAGE
 
 With only NPM:
 
->
->npm install
->npm start
-> npm run dev
-
-Quote break.
+>npm install <br>
+>npm start <br>
+>npm run dev
 
 
-Access the website via http://localhost:3000 or API via http://localhost:3000/api
+Access the website via <http://localhost:3000> or API via <http://localhost:3000/api>
