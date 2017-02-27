@@ -5,6 +5,7 @@ const router = express.Router()
 const models = require('../models')
 const controllers = require('../controllers/users')
 
+//controllers
 router.get('/users', controllers.listUsers)
 
 router.get('/users/:id', controllers.findOne)
