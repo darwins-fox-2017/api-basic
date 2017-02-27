@@ -48,7 +48,14 @@ router.put('/:id', function(req, res, next){
       id: req.params.id
     }
   }).then((user) => {
-    res.json(user)
+    if (user == 1) {
+      res.json(user)
+    } else {
+      res.json({
+        status: false,
+        msg: 'User with id : ' + req.params.id + ' doesnt exist'
+      })
+    }
   })
 })
 
