@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All users</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>List All users</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User Id</th>
+                <th>Name</th>
+                <th>Hobby</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < resultUser.length; i++) { %>
+                <tr>
+                    <th scope="row">
+                        <%= i + 1 %>
+                    </th>
+                    <td>
+                        <%= resultUser[i].id %>
+                    </td>
+                    <td>
+                        <%= resultUser[i].name %>
+                    </td>
+                    <td>
+                        <%= resultUser[i].hobby %>
+                    </td>
+                    <td>
+                        <%= resultUser[i].address %>
+                    </td>
+                    <td>
+                        <a href="items/update/<%= resultUser[i].id %>"> Update </a>
+                        <span> | | </span>
+                        <a href="items/delete/<%= resultUser[i].id %>"> Delete </a>
+                    </td>
+                    <% } %>
+                </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="items/new">Add new users</a>
+    <br>
+</body>
+
+</html>
